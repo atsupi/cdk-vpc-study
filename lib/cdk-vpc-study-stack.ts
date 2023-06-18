@@ -17,6 +17,7 @@ export class CdkVpcStudyStack extends cdk.Stack {
         generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
       vpcSubnets: { subnetType: ec2.SubnetType.PUBLIC },
+      keyName: process.env.CDK_KEYPAIR,
     });
     webServer1.connections.allowFromAnyIpv4(ec2.Port.tcp(22));
 
@@ -27,6 +28,7 @@ export class CdkVpcStudyStack extends cdk.Stack {
         generation: ec2.AmazonLinuxGeneration.AMAZON_LINUX_2,
       }),
       vpcSubnets: { subnetType: ec2.SubnetType.PRIVATE_WITH_EGRESS },
+      keyName: process.env.CDK_KEYPAIR,
     });
     apiServer1.connections.allowFromAnyIpv4(ec2.Port.tcp(22));
   }

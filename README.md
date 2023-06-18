@@ -15,4 +15,4 @@ This is a project for CDK development with TypeScript.
 
 export ACCOUNT_ID=<your AWS account id>
 export REGION=<your favorite region>
-
+export CDK_KEYPAIR=<your key pair to login EC2 instance with ssh>
